@@ -2,6 +2,11 @@
 <html>
 <head>
 <title>Preethi R </title>
+<meta name="referrer" content="no-referrer" />
+<meta name="referrer" content="unsafe-url" />
+<meta name="referrer" content="origin" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta name="referrer" content="origin-when-cross-origin" />
 <style>
 .img{
 	width:200px;
@@ -13,10 +18,20 @@ ol ul {
     list-style-type:disc;
 }
 </style>
+<script async>
+window.online = navigator.onLine;
+function redirect404Errors() {
+    if (window.online) {
+        window.location.replace("404.html?url="+encodeURIComponent(document.location.href));    
+    }   
+}
+</script>
+
 </head>
 <body>
 
-<a href="./DemoThree.html">Stream Name</a>
+<a href="./DemoThree.html" onclick="redirect404Errors()">Stream Name</a>
 
 </body>
+
 </html>
